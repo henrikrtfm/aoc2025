@@ -30,13 +30,9 @@ class Day01(private val input: List<String>) {
         else -> 0
     }
 
-    private fun parse(input: String): Int {
-        val direction = input.first()
-        val clicks = input.drop(1).toInt()
-        return when (direction) {
-            'R' -> clicks
-            'L' -> -clicks
-            else -> throw IllegalArgumentException("Direction must be 'L' or 'R'")
-        }
+    private fun parse(input: String): Int = when (input.first()) {
+        'R' -> input.drop(1).toInt()
+        'L' -> -input.drop(1).toInt()
+        else -> throw IllegalArgumentException("Direction must be 'L' or 'R'")
     }
 }

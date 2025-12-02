@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Part 2" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-12-02T09:01:37.171Z" hostname="TARS" time="0.378">
+  <properties/>
+  <testcase name="Actual answer()" classname="com.edsparr.aoc2025.Day02Test$Part2" time="0.376">
+    <failure message="org.opentest4j.AssertionFailedError: &#13;&#10;expected: 0L&#13;&#10; but was: 35950619148L" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: 
+expected: 0L
+ but was: 35950619148L
+	at app//com.edsparr.aoc2025.Day02Test$Part2.Actual answer(Day02Test.kt:42)
+	at java.base@22.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@22.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base@22.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base@22.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+</failure>
+  </testcase>
+  <testcase name="Matches example 1()" classname="com.edsparr.aoc2025.Day02Test$Part2" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

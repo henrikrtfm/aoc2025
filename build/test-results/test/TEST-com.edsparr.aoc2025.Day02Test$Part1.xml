@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Part 1" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-02T09:01:36.980Z" hostname="TARS" time="0.189">
-  <properties/>
-  <testcase name="Actual answer()" classname="com.edsparr.aoc2025.Day02Test$Part1" time="0.187"/>
-  <testcase name="Matches example 1()" classname="com.edsparr.aoc2025.Day02Test$Part1" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

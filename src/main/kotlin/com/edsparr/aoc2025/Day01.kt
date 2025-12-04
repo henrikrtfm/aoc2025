@@ -8,7 +8,7 @@ class Day01(private val input: List<String>) {
         private const val SAFE = 100
         private const val INITIAL_POINTER = 50
     }
-    private val rotations = input.map { parse(it) }
+    private val rotations = input.map { parseInput(it) }
 
     fun solvePart1(): Int =
         rotations.runningFold(INITIAL_POINTER) { pointer, rotation ->
@@ -30,7 +30,7 @@ class Day01(private val input: List<String>) {
         else -> 0
     }
 
-    private fun parse(input: String): Int = when (input.first()) {
+    private fun parseInput(input: String): Int = when (input.first()) {
         'R' -> input.drop(1).toInt()
         'L' -> -input.drop(1).toInt()
         else -> throw IllegalArgumentException("Direction must be 'L' or 'R'")

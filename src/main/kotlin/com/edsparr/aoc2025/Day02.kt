@@ -6,7 +6,7 @@ class Day02(private val input: String) {
         private const val MIN_REPETITIONS = 2
         private const val HALF_DIVISOR = 2
     }
-    private val idRanges = parse(input)
+    private val idRanges = parseInput(input)
 
     fun solvePart1(): Long =
         idRanges.flatMap { (start, end) -> (start..end).map { it.toString() } }.sumOf { isInvalid(it) }
@@ -33,7 +33,7 @@ class Day02(private val input: String) {
         return repetitions >= MIN_REPETITIONS && id.length % pattern.length == 0 && pattern.repeat(repetitions) == id
     }
 
-    private fun parse(input: String): List<Pair<Long, Long>> =
+    private fun parseInput(input: String): List<Pair<Long, Long>> =
         input.split(",").map { range ->
             range.split("-").let { parts -> parts[0].toLong() to parts[1].toLong() }
         }

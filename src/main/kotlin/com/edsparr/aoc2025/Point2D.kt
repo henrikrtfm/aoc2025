@@ -3,6 +3,17 @@ package com.edsparr.aoc2025
 import kotlin.math.absoluteValue
 
 data class Point2D(val x: Int, val y: Int) {
+    fun neighbors(): Set<Point2D> =
+        setOf(
+            this + NORTH_WEST,
+            this + NORTH,
+            this + NORTH_EAST,
+            this + WEST,
+            this + EAST,
+            this + SOUTH_WEST,
+            this + SOUTH,
+            this + SOUTH_EAST
+        )
 
     fun cardinalNeighbors(): Set<Point2D> =
         setOf(
@@ -33,6 +44,10 @@ data class Point2D(val x: Int, val y: Int) {
         val EAST = Point2D(1, 0)
         val SOUTH = Point2D(0, 1)
         val WEST = Point2D(-1, 0)
+        val NORTH_WEST = NORTH + WEST
+        val NORTH_EAST = NORTH + EAST
+        val SOUTH_WEST = SOUTH + WEST
+        val SOUTH_EAST = SOUTH + EAST
 
         fun of(input: String): Point2D =
             input.split(",").let {

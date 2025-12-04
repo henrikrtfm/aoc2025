@@ -1,5 +1,12 @@
 package com.edsparr.aoc2025
 
+tailrec fun Long.gcd(other: Long): Long =
+    if (other == 0L) this
+    else other.gcd(this % other)
+
+fun Long.lcm(other: Long): Long =
+    (this * other) / this.gcd(other)
+
 fun <T> List<T>.midpoint(): T =
     this[lastIndex / 2]
 
@@ -9,6 +16,9 @@ operator fun List<CharArray>.get(at: Point2D): Char =
 operator fun List<CharArray>.set(at: Point2D, value: Char) {
     this[at.y][at.x] = value
 }
+
+fun List<CharArray>.isSafe(at: Point2D) =
+    at.y in this.indices && at.x in this[at.y].indices
 
 fun List<String>.findSingle(target: Char): Point2D =
     flatMapIndexed { y, row ->

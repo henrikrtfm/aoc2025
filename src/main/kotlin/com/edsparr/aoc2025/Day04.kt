@@ -1,6 +1,10 @@
 package com.edsparr.aoc2025
 
 class Day04(private val input: List<String>) {
+    private companion object {
+        private const val MAX_NEIGHBORS = 8
+        private const val ACCESSIBLE_THRESHOLD = 4
+    }
 
     private val warehouse: List<CharArray> = input.map { it.toCharArray() }
 
@@ -26,7 +30,7 @@ class Day04(private val input: List<String>) {
 
     private fun isRollAccessible(roll: Point2D, currentWarehouse: List<CharArray> = warehouse): Boolean {
         val neighbors = roll.neighbors().filter { currentWarehouse.isSafe(it) }.map { currentWarehouse[it] }
-        return (neighbors.count { it == '.' } + 8 - neighbors.size) > 4
+        return (neighbors.count { it == '.' } + MAX_NEIGHBORS - neighbors.size) > ACCESSIBLE_THRESHOLD
     }
 
     private fun List<CharArray>.findAll(target: Char): List<Point2D> =

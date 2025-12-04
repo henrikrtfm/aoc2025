@@ -9,17 +9,17 @@ class Day04(private val input: List<String>) {
 
     fun solvePart2(): Int =
         generateSequence(warehouse.map { it.clone() } to 0) { (currentWarehouse, _) ->
-            val movableRolls = currentWarehouse.findAll('@').filter { isRollAccessible(it, currentWarehouse) }
-            if (movableRolls.isEmpty()) null
-            else removeRolls(currentWarehouse, movableRolls) to movableRolls.size
+            val removableRolls = currentWarehouse.findAll('@').filter { isRollAccessible(it, currentWarehouse) }
+            if (removableRolls.isEmpty()) null
+            else removeRolls(currentWarehouse, removableRolls) to removableRolls.size
         }
             .sumOf { it.second }
 
-    private fun removeRolls(warehouse: List<CharArray>, rolls: List<Point2D>): List<CharArray> {
-        val rollsSet = rolls.toSet()
+    private fun removeRolls(warehouse: List<CharArray>, removableRolls: List<Point2D>): List<CharArray> {
+        val removableRollsSet = removableRolls.toSet()
         return warehouse.mapIndexed { y, row ->
             row.mapIndexed { x, char ->
-                if (Point2D(x, y) in rollsSet) '.' else char
+                if (Point2D(x, y) in removableRollsSet) '.' else char
             }.toCharArray()
         }
     }

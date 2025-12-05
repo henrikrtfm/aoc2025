@@ -50,6 +50,9 @@ General Guidelines:
 - Use higher-order functions (map, filter, reduce, etc.) to avoid function nesting.
   - Use lambda expressions for simple functions (less than 3 instructions).
   - Use named functions for non-simple functions.
+- Prefer higher-order functions over for and while loops whenever possible.
+  - Use forEach, map, filter, fold, reduce, generateSequence, etc. instead of imperative loops.
+  - Only use for/while loops when higher-order functions are not suitable or would significantly reduce readability.
 - Use default parameter values instead of checking for null.
 - Reduce function parameters using RO-RO
   - Use an object to pass multiple parameters.
